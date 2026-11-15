@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Atmosphere-Rebuild-Time: 2025-12-18T01:27:44Z
 
-FROM ghcr.io/vexxhost/openstack-venv-builder:main@sha256:62dc82349660a822d6729e105f2b26e785e3f7ded6fb8a92ea8beb717880cc05 AS build
+FROM ghcr.io/vexxhost/openstack-venv-builder:main@sha256:9fbb1acf75178dce2934f73fbbe6c5d3e8c2191689251764da04172faa76cbf1 AS build
 RUN <<EOF bash -xe
 uv pip install \
     --constraint /upper-constraints.txt \
@@ -10,7 +10,7 @@ uv pip install \
         sushy-tools
 EOF
 
-FROM ghcr.io/vexxhost/python-base:main@sha256:2e16855b7d95781de7396ac2cac3aef32ca5a83079db724e3f97d4e4be322c94
+FROM ghcr.io/vexxhost/python-base:main@sha256:a3028101248a25358d16549a4fdbf65826a5ebfd04d91a5e2da2f2b48b07ad68
 RUN <<EOF bash -xe
 apt-get update -qq
 apt-get install -qq -y --no-install-recommends \
